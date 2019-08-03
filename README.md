@@ -1,2 +1,2 @@
-# getkandid
+# getKandid
 Feedback tool for Startups
