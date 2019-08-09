@@ -1,88 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" >
-		<title>Startup 3.0.5 - Project</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" href="static/images/favicon.png" type="static/images/x-icon">
-		<!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,500,700,800,900|Poppins:100,200,300,400,500,600,700,800,900&amp;subset=latin" rel="stylesheet">
-				<!-- Bootstrap 4.3.1 CSS -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-		<!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-		<!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<!-- FontAwesome CSS -->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-		<!-- Startup 3 CSS (Styles for all blocks) -->
-		<link href="static/css/style.css" rel="stylesheet" />
-				<!-- jQuery 3.3.1 -->
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	</head> 
-	<body>
+<!doctype html>
+<html class="no-js" lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="static/images/icon/favicon.ico">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/themify-icons.css">
+    <link rel="stylesheet" href="static/css/metisMenu.css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="static/css/typography.css">
+    <link rel="stylesheet" href="static/css/default-css.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="static/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
 
-<!-- Form 1 -->
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- login area start -->
+    <div class="login-area login-s2">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form method="POST">
+                    <div class="login-form-head">
+                        <h4>Sign Up</h4>
+                        <p>Hello there, sign up and start creating a culture of feedback</p>
+                    </div>
+                    <div class="login-form-body">
+                        <div class="form-gp">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="text" id="email_address" name="email_address">
+                            <i class="ti-email"></i>
+                        </div>
+                        <div class="form-gp">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" name="password" id="password">
+                            <i class="ti-lock"></i>
+                        </div>
+                        <div class="row mb-4 rmber-area">
+                            <div class="col-6">
+                                
+                            </div>
+                        </div>
+                        <div class="submit-btn-area">
+                            <button id="form_submit" type="submit">Sign Up <i class="ti-arrow-right"></i></button>
+                        </div>
+                        <div class="form-footer text-center mt-5">
+                            <p class="text-muted">Already have an account? <a href="{{'login'}}">Log in</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- login area end -->
 
-<section class="form_1 pt-120 pb-200">
-	<div class="container px-xl-0">
-		<form method="POST" class="bg-light mx-auto mw-430 radius10 pt-40 px-50 pb-30">
-			<h2 class="mb-40 small text-center" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">Sign Up Now</h2>
-			<div class="mb-20 input_holder" data-aos-duration="600" data-aos="fade-down" data-aos-delay="150">
-				<input type="text" name="email_address" id="email_address" placeholder="Your email" class="input border-gray focus-action-1 color-heading placeholder-heading w-full" />
-			</div>
-			<div class="mb-20 input_holder" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-				<input type="password" name="password" id="password" placeholder="Your password" class="input border-gray focus-action-1 color-heading placeholder-heading w-full" />
-			</div>
-			<div data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
-				<button id="submit" type="submit" class="mt-25 btn action-1 w-full">Create an Account</button>
-			</div>
-			<div class="mt-50 hr bg-gray h-1" data-aos-duration="600" data-aos="fade-down" data-aos-delay="750"></div>
-			<div class="mt-25 f-18 medium color-heading text-center" data-aos-duration="600" data-aos="fade-down" data-aos-delay="900">
-				Do you have an Account? <a href="{{'login'}}" class="link action-1">Sign In</a>
-			</div>
-		</form>
-	</div>
-</section><!-- forms alerts -->
-<!----div class="alert alert-success alert-dismissible alert-form-success" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	Thanks for your message!
-</div>
-<div class="alert alert-warning alert-dismissible alert-form-check-fields" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	Please, fill in required fields.
-</div>
-<div class="alert alert-danger alert-dismissible alert-form-error" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	An error occurred while sending data :(
-</div-->
-<!-- popup with video -->
-<div class="overlay"></div>
-
-<!----div class="video_popup">
-	<a class="close">
-		<img srcset="static/images/close_white@2x.png 2x" src="static/images/close_white.png" alt="" />
-	</a>
-	<div class="d-flex align-items-center justify-content-center w-full h-full iframe_container"></div>
-</div-->
-
-<!-- Bootstrap 4.3.1 JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<!-- Google maps JS API -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"></script>
-<!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
-<script src="static/js/jquery.maskedinput.min.js"></script>
-<!-- Startup 3 JS (Custom js for all blocks) -->
-<script src="static/js/script.js"></script>
-
+    <!-- jquery latest version -->
+    <script src="static/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/metisMenu.min.js"></script>
+    <script src="static/js/jquery.slimscroll.min.js"></script>
+    <script src="static/js/jquery.slicknav.min.js"></script>
+    
+    <!-- others plugins -->
+    <script src="static/js/plugins.js"></script>
+    <script src="static/js/scripts2.js"></script>
 </body>
+
 </html>

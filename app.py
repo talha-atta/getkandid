@@ -13,8 +13,8 @@ migrate = Migrate(app, db)
 #USER MODEL
 class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-	email_address = db.Column(db.String(80), unique=True)
 	password = db.Column(db.String(80))
+	email_address = db.Column(db.String(80), unique=True)
 
 	def __init__(self, email_address, password):
 		self.email_address = email_address
@@ -24,31 +24,8 @@ class User(db.Model):
 #SERVER ROUTES
 @app.route("/", methods=['GET', 'POST'])
 def landing():
-    return render_template('landing.html')
+	return render_template('landing.html')
 
-
-@app.route('/home', methods=['GET', 'POST'])
-def home():
-	if request.method == 'GET':
-		return "Hello World"
-
-
-@app.route("/register", methods=['GET', 'POST']) 
-def register():
-
-	if request.method == 'POST':
-		data = User.query.filter_by(email_address=request.form['email_address']).first()
-		if data is not None:
-			return "user exists"
-		else:
-			new_user = User(email_address=request.form['email_address'], password=request.form['password'])
-			db.session.add(new_user)
-			db.session.commit()
-			session['logged_in'] = True
-			return redirect(url_for('home'))
-	else:
-		return render_template('register.html')    
-		
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -68,7 +45,27 @@ def login():
 		return 'User Does Not Exist'
 
 
+@app.route("/register", methods=['GET', 'POST']) 
+def register():
 
+	if request.method == 'POST':
+		data = User.query.filter_by(email_address=request.form['email_address']).first()
+		if data is not None:
+			return "user exists"
+		else:
+			new_user = User(email_address=request.form['email_address'], password=request.form['password'])
+			db.session.add(new_user)
+			db.session.commit()
+			session['logged_in'] = True
+			return redirect(url_for('home'))
+	else:
+		return render_template('register.html')    
+
+@app.route("/home", methods=['GET', 'POST'])
+def home():
+	return "This is the home page"
+
+    
 if __name__ == "__main__":
 	db.create_all()
 	app.secret_key = '123'
