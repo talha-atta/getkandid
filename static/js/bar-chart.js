@@ -774,7 +774,7 @@ if ($('#socialads').length) {
         },
         title: false,
         xAxis: {
-            categories: ['FB', 'TW', 'INS', 'G+', 'LINKD']
+            categories: ['Employee 1', 'Employee 2', 'Employee 3', 'Employee 4', 'Employee 5']
         },
         colors: ['#F5CA3F', '#E5726D', '#12C599', '#5F73F2'],
         yAxis: {
