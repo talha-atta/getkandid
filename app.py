@@ -12,6 +12,7 @@ migrate = Migrate(app, db)
 
 #USER MODEL
 class User(db.Model):
+	__tablename__ = 'user'
 	id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(80))
 	last_name = db.Column(db.String(80))
@@ -27,18 +28,19 @@ class User(db.Model):
 
 #TEAM MODEL
 class Team(db.Model):
+	__tablename__ = 'team'
 	id = db.Column(db.Integer, primary_key=True)
 	first_name = db.Column(db.String(80))
 	last_name = db.Column(db.String(80))
 	email_address = db.Column(db.String(80), unique=True)
-	team_leader = db.Column(db.String(80), unique=True)
+	team_leader = db.Column(db.String(80), db.ForeignKey('User.email_address'), unique=True)
 	url = db.Column(db.String(80), unique=True)
 	
 
 	def __init__(self, first_name, last_name, email_address, password):
 		self.first_name = first_name
 		self.last_name = last_name
-		self.email_address = email_address
+		email_address = session['email_address']
 		self.team_leader = team_leader
 		self.url = url
 		
@@ -50,7 +52,6 @@ def landing():
 
 @app.route("/register", methods=['GET', 'POST']) 
 def register():
-
 	if request.method == 'POST':
 		data = User.query.filter_by(email_address=request.form['email_address']).first()
 		if data is not None:
@@ -83,7 +84,14 @@ def login():
 
 @app.route("/home", methods=['GET', 'POST'])
 def home():
-	return render_template('home.html')
+	if request.method == 'POST':
+		new_employee = Team(first_name=request.form['first_name'], last_name=request.form['last_name'], email_address=request.form['email_address'])
+		db.session.add(new_employee)
+		db.session.commit()
+		session['logged_in'] = True
+		return redirect(url_for('home'))
+	else:
+		return render_template('home.html')
 
 @app.route("/analytics", methods=['GET', 'POST'])
 def analytics():
